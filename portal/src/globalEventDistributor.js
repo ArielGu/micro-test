@@ -8,6 +8,7 @@ export class GlobalEventDistributor {
   }
 
   dispatch(event) {
-    this.stores.forEach(s => s.dispatch(event));
+    console.log(event)
+    this.stores.forEach(s => s.dispatch(s.commit? event.type.toLowerCase(): event));
   }
 }

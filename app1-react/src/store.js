@@ -4,6 +4,7 @@ const initialState = {
   count: 0
 };
 const reducer = (state = initialState, action) => {
+  console.log('redux...')
   switch (action.type) {
     case "INCREMENT":
       return {

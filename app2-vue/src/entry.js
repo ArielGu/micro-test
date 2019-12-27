@@ -1,13 +1,17 @@
 import Vue from "vue";
+import Vuex from 'vuex';
 import singleSpaVue from "single-spa-vue";
 import App from "./App.vue";
+import {storeInstance} from './store'
 
 Vue.config.productionTip = false;
+Vue.use(Vuex);
 
 const vueLifecycles = singleSpaVue({
   Vue,
   appOptions: {
     el: "#app2",
+    store: storeInstance,
     render: h => h(App)
   }
 });
